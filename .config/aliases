@@ -1,5 +1,5 @@
 # dot file management
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias dot-config='/usr/bin/git --git-dir=$HOME/.dot-config/ --work-tree=$HOME'
 
 # ls
 alias ls='ls -h -F --group-directories-first --color=auto --hyperlink=auto'
