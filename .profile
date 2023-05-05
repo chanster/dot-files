@@ -1,12 +1,4 @@
-# ~/.profile: executed by the command interpreter for login shells.
-# This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login
-# exists.
-# see /usr/share/doc/bash/examples/startup-files for examples.
-# the files are located in the bash-doc package.
-
-# the default umask is set in /etc/profile; for setting the umask
-# for ssh logins, install and configure the libpam-umask package.
-#umask 022
+# This is configured to work with both bash and zsh
 
 # if running bash
 if [[ -n "${BASH_VERSION}" ]]; then
@@ -15,37 +7,35 @@ if [[ -n "${BASH_VERSION}" ]]; then
 	source "${HOME}/.bashrc"
     fi
 fi
-# if zsh
-if [[ -n "${ZSH_VERSION}" ]]; then
-    # include .zshrc if it exists
-    if [ -f "${HOME}/.zshrc" ]; then
-	source "${HOME}/.zshrc"
-    fi
-fi
-
-# set PATH so it includes user's private bin if it exists
-if [[ -d "${HOME}/bin" ]]; then
-    PATH="${HOME}/bin:${PATH}"
-fi
 
 # set PATH so it includes user's private bin if it exists
 if [[ -d "${HOME}/.local/bin" ]]; then
     PATH="${HOME}/.local/bin:${PATH}"
 fi
 
-# aliases
+# set aliases
 if [[ -f "${HOME}/.config/aliases" ]]; then
-    source ${HOME}/.config/aliases
+    source "${HOME}/.config/aliases"
 fi
 
-# asdf
+# asdf version manager
 if [[ -d "${HOME}/.asdf" ]]; then
     source ${HOME}/.asdf/asdf.sh
     if [[ -n "${BASH_VERSION}" ]]; then
-	source "${HOME}/.asdf/completions/asdf.bash"
+    	source "${ASDF_DIR}/completions/asdf.bash"
     fi
-    if [[ -n "${ZSH_VESION}" ]]; then
+    if [[ -n "${ZSH_VERSION}" ]]; then
+        # append completions to fpath
         fpath=(${ASDF_DIR}/completions $fpath)
+        # initialise completions with ZSH's compinit
+        autoload -Uz compinit && compinit
     fi
+fi
+
+# android dev
+if [[ -d "${HOME}/Android/Sdk" ]]; then
+    export ANDROID_HOME="${HOME}/Android/Sdk"
+    export PATH="${PATH}:${ANDROID_HOME}/emulator"
+    export PATH="${PATH}:${ANDROID_HOME}/platform-tools"
 fi
 
