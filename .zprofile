@@ -1,2 +1,4 @@
-emulate sh -c '. ~/.profile'
+if [[ -f "${HOME}/.profile" ]]; then
+    source "${HOME}/.profile"
+fi
 
