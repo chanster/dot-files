@@ -3,5 +3,8 @@ alias dot-config='/usr/bin/git --git-dir=$HOME/.dot-config/ --work-tree=$HOME'
 
 # ls
 alias ls='ls -h -F --group-directories-first --color=auto --hyperlink=auto'
+alias la='ls -h -F -a --group-directories-first --color=auto --hyperlink=auto'
 alias ll='ls -l -h -F --group-directories-first --color=auto --hyperlink=auto'
+alias lla='ls -l -h -F -a --group-directories-first --color=auto --hyperlink=auto'
+
 
