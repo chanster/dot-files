@@ -33,9 +33,15 @@ if [[ -d "${HOME}/.asdf" ]]; then
 fi
 
 # android dev
-if [[ -d "${HOME}/Android/Sdk" ]]; then
-    export ANDROID_HOME="${HOME}/Android/Sdk"
+if [[ -d "${HOME}/.local/applications/Android/Sdk" ]]; then
+    export ANDROID_HOME="${HOME}/.local/applications/Android/Sdk"
     export PATH="${PATH}:${ANDROID_HOME}/emulator"
     export PATH="${PATH}:${ANDROID_HOME}/platform-tools"
+fi
+
+# diable history files
+if [[ $(command -v less) ]]; then
+	export LESSHISTFILE=-
+    export LESSHISTSIZE=0
 fi
 
