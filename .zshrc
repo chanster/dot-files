@@ -2,9 +2,12 @@
 HISTFILE="${HOME}/.local/zsh_history"
 HISTSIZE=10000
 SAVEHIST=10000
-setopt histignorespace  # don't save command starts with a space
-setopt appendhistory    # append to history
-setopt SHARE_HISTORY    # allow multiple terminal sessions to use history
+setopt HIST_IGNORE_SPACE  # don't save command prefixed with a space
+setopt APPEND_HISTORY     # append to history
+setopt SHARE_HISTORY      # allow multiple terminal sessions to use history
+
+# tab select
+zstyle ':completion:*' menu select
 
 # zim:fw zsh framework
 if [[ -d "${HOME}/.config/zsh/zimfw" ]]; then
