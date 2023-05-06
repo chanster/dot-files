@@ -1,7 +1,14 @@
-# compeltions
+# prompt enhancement
+zmodule prompt-pwd  # required for themes
+zmodule git-info
+
+# theme
+zmodule eriner
+
+# community modules
 zmodule zsh-users/zsh-completions --fpath src
 zmodule completion
-
 zmodule zsh-users/zsh-syntax-highlighting
 zmodule zsh-users/zsh-autosuggestions
 zmodule zsh-users/zsh-history-substring-search
+
