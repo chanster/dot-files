@@ -37,6 +37,7 @@ if [[ -d "${HOME}/.local/applications/Android/Sdk" ]]; then
     export ANDROID_HOME="${HOME}/.local/applications/Android/Sdk"
     export PATH="${PATH}:${ANDROID_HOME}/emulator"
     export PATH="${PATH}:${ANDROID_HOME}/platform-tools"
+	export GRADLE_USER_HOME="${HOME}/.config/.gradle"
 fi
 
 # diable history files
