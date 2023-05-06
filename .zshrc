@@ -42,8 +42,3 @@ if [[ -f "${HOME}/.zprofile" ]]; then
     source .zprofile
 fi
 
-# Starship cross-shell theming
-if [[ $(command -v starship) ]]; then
-    source <(starship init zsh --print-full-init)
-fi
-
