@@ -7,4 +7,11 @@ alias la='ls -h -F -a --group-directories-first --color=auto --hyperlink=auto'
 alias ll='ls -l -h -F --group-directories-first --color=auto --hyperlink=auto'
 alias lla='ls -l -h -F -a --group-directories-first --color=auto --hyperlink=auto'
 
+# grep
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+# wget
+alias wget="wget --no-hsts"
 
