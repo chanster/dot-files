@@ -39,6 +39,6 @@ fi
 # zprofile is only sourced when logging in via console or SSH
 # we want to load this when we open a terminal within a session
 if [[ -f "${HOME}/.zprofile" ]]; then
-    source .zprofile
+    source "${HOME}/.zprofile"
 fi
 
