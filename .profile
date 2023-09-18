@@ -23,12 +23,24 @@ if [[ -d "${HOME}/.asdf" ]]; then
     source ${HOME}/.asdf/asdf.sh
     if [[ -n "${BASH_VERSION}" ]]; then
     	source "${ASDF_DIR}/completions/asdf.bash"
+	# load plugins helpers
+	if [[ -d "${HOME}/.asdf/plugins" ]]; then
+	    for helper in $(find "${HOME}/.asdf/plugins" -maxdepth 2 -name "*.bash"); do
+		source "${helper}"
+	    done
+	fi
     fi
     if [[ -n "${ZSH_VERSION}" ]]; then
         # append completions to fpath
         fpath=(${ASDF_DIR}/completions $fpath)
         # initialise completions with ZSH's compinit
         autoload -Uz compinit && compinit
+	# load plugins helpers
+	if [[ -d "${HOME}/.asdf/plugins" ]]; then
+	    for helper in $(find "${HOME}/.asdf/plugins" -maxdepth 2 -name "*.zsh"); do
+		source "${helper}"
+	    done
+	fi
     fi
 fi
 
