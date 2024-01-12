@@ -44,6 +44,11 @@ if [[ -d "${HOME}/.asdf" ]]; then
     fi
 fi
 
+# mise version manager
+if [[ $(command -v "mise") ]]; then
+  eval "$(mise activate ${SHELL##*/})"
+fi
+
 # android dev
 if [[ -d "${HOME}/.local/applications/Android/Sdk" ]]; then
     export ANDROID_HOME="${HOME}/.local/applications/Android/Sdk"
