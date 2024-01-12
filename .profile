@@ -47,6 +47,7 @@ fi
 # mise version manager
 if [[ $(command -v "mise") ]]; then
   eval "$(mise activate ${SHELL##*/})"
+  eval "$(mise completion ${SHELL##*/})"
 fi
 
 # android dev
