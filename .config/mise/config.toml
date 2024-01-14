@@ -1,0 +1,10 @@
+[tools]
+terraform = "latest"
+packer = "latest"
+jq = "latest"
+go = "latest"
+java = "latest"
+task = "latest"
+k9s = "latest"
+python = "latest"
+shellcheck = "latest"
