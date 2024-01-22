@@ -7,8 +7,11 @@ setopt APPEND_HISTORY       # append to history
 setopt SHARE_HISTORY        # allow multiple terminal sessions to use history
 setopt HIST_IGNORE_ALL_DUPS # remove older duplicate commands
 
-# tab select
-zstyle ':completion:*' menu select
+# zprofile is only sourced when logging in via console or SSH
+# we want to load this when we open a terminal within a session
+if [[ -f "${HOME}/.zprofile" ]]; then
+    source "${HOME}/.zprofile"
+fi
 
 # zim:fw zsh framework
 if [[ -d "${HOME}/.config/zsh/zimfw" ]]; then
@@ -37,9 +40,13 @@ if [[ -d "${HOME}/.config/zsh/zimfw" ]]; then
     fi
 fi
 
-# zprofile is only sourced when logging in via console or SSH
-# we want to load this when we open a terminal within a session
-if [[ -f "${HOME}/.zprofile" ]]; then
-    source "${HOME}/.zprofile"
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+
+# Bind up and down keys
+zmodload -F zsh/terminfo +p:terminfo
+if [[ -n ${terminfo[kcuu1]} && -n ${terminfo[kcud1]} ]]; then
+  bindkey ${terminfo[kcuu1]} history-substring-search-up
+  bindkey ${terminfo[kcud1]} history-substring-search-down
 fi
 
