@@ -2,9 +2,10 @@
 HISTFILE="${HOME}/.local/zsh_history"
 HISTSIZE=10000
 SAVEHIST=10000
-setopt HIST_IGNORE_SPACE  # don't save command prefixed with a space
-setopt APPEND_HISTORY     # append to history
-setopt SHARE_HISTORY      # allow multiple terminal sessions to use history
+setopt HIST_IGNORE_SPACE    # don't save command prefixed with a space
+setopt APPEND_HISTORY       # append to history
+setopt SHARE_HISTORY        # allow multiple terminal sessions to use history
+setopt HIST_IGNORE_ALL_DUPS # remove older duplicate commands
 
 # tab select
 zstyle ':completion:*' menu select
