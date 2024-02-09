@@ -7,6 +7,9 @@ setopt APPEND_HISTORY       # append to history
 setopt SHARE_HISTORY        # allow multiple terminal sessions to use history
 setopt HIST_IGNORE_ALL_DUPS # remove older duplicate commands
 
+# set aliases
+if [[ -f "${HOME}/.config/aliases" ]]; then
+    source "${HOME}/.config/aliases"
 fi
 
 # zim:fw zsh framework
