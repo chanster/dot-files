@@ -13,11 +13,6 @@ if [[ -d "${HOME}/.local/bin" ]]; then
     PATH="${HOME}/.local/bin:${PATH}"
 fi
 
-# set aliases
-if [[ -f "${HOME}/.config/aliases" ]]; then
-    source "${HOME}/.config/aliases"
-fi
-
 # asdf version manager
 if [[ -d "${HOME}/.asdf" ]]; then
     source ${HOME}/.asdf/asdf.sh
