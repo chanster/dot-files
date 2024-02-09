@@ -1,3 +1,4 @@
+# shellcheck disable=SC2148,SC1090,SC1091
 # This is configured to work with both bash and zsh
 
 # set PATH so it includes user's private bin if it exists
@@ -7,7 +8,7 @@ fi
 
 # asdf version manager
 if [[ -d "${HOME}/.asdf" ]]; then
-    source ${HOME}/.asdf/asdf.sh
+    source "${HOME}/.asdf/asdf.sh"
     if [[ -n "${BASH_VERSION}" ]]; then
         source "${ASDF_DIR}/completions/asdf.bash"
         # load plugins helpers
@@ -16,10 +17,9 @@ if [[ -d "${HOME}/.asdf" ]]; then
                 source "${helper}"
             done
         fi
-    fi
-    if [[ -n "${ZSH_VERSION}" ]]; then
+    elif [[ -n "${ZSH_VERSION}" ]]; then
         # append completions to fpath
-        fpath=(${ASDF_DIR}/completions $fpath)
+        fpath=("${ASDF_DIR}/completions" "${fpath}")
         # initialise completions with ZSH's compinit
         autoload -Uz compinit && compinit
         # load plugins helpers
@@ -33,7 +33,9 @@ fi
 
 # mise version manager
 if [[ $(command -v "mise") ]]; then
+    # shellcheck disable=SC2086
     eval "$(mise activate ${SHELL##*/})"
+    # shellcheck disable=SC2086
     eval "$(mise completion ${SHELL##*/})"
 fi
 
@@ -54,8 +56,8 @@ fi
 # load rc files
 if [[ -n "${ZSH_VERSION}" ]]; then
     if [[ -f "${HOME}/.zshrc" ]]; then
-        source $HOME}/.zshrc
-    if
+        source "${HOME}/.zshrc"
+    fi
 elif [[ -n "${BASH_VERSION}" ]]; then
     # include .bashrc if it exists
     if [[ -f "${HOME}/.bashrc" ]]; then
