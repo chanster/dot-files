@@ -7,10 +7,6 @@ setopt APPEND_HISTORY       # append to history
 setopt SHARE_HISTORY        # allow multiple terminal sessions to use history
 setopt HIST_IGNORE_ALL_DUPS # remove older duplicate commands
 
-# zprofile is only sourced when logging in via console or SSH
-# we want to load this when we open a terminal within a session
-if [[ -f "${HOME}/.zprofile" ]]; then
-    source "${HOME}/.zprofile"
 fi
 
 # zim:fw zsh framework
