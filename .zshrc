@@ -1,3 +1,8 @@
+# If not running interactively, don't do anything
+if ! [[ -o interactive ]]; then
+    return
+fi
+
 # history
 HISTFILE="${HOME}/.local/zsh_history"
 HISTSIZE=10000
