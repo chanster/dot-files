@@ -1,13 +1,5 @@
 # This is configured to work with both bash and zsh
 
-# if running bash
-if [[ -n "${BASH_VERSION}" ]]; then
-    # include .bashrc if it exists
-    if [ -f "${HOME}/.bashrc" ]; then
-        source "${HOME}/.bashrc"
-    fi
-fi
-
 # set PATH so it includes user's private bin if it exists
 if [[ -d "${HOME}/.local/bin" ]]; then
     PATH="${HOME}/.local/bin:${PATH}"
@@ -57,5 +49,17 @@ fi
 if [[ $(command -v less) ]]; then
     export LESSHISTFILE=-
     export LESSHISTSIZE=0
+fi
+
+# load rc files
+if [[ -n "${ZSH_VERSION}" ]]; then
+    if [[ -f "${HOME}/.zshrc" ]]; then
+        source $HOME}/.zshrc
+    if
+elif [[ -n "${BASH_VERSION}" ]]; then
+    # include .bashrc if it exists
+    if [[ -f "${HOME}/.bashrc" ]]; then
+        source "${HOME}/.bashrc"
+    fi
 fi
 
