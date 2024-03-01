@@ -1,11 +1,14 @@
-local plug_path = vim.fn.stdpath("data") .. "/site/autoload/plug.vim"
-if not vim.loop.fs_stat(plug_path) then
+local lazy_path = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazy_path) then
     vim.fn.system({
-    	"curl", "--create-dirs",
-    	"-sfL", "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim",
-    	"-o", plug_path
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable",
+    	lazy_path
     })
 end
 
-vim.opt.rtp:prepend(plug_path)
+vim.opt.rtp:prepend(lazy_path)
 
