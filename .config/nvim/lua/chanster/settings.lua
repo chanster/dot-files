@@ -1,7 +1,6 @@
 vim.opt.termguicolors = true -- enable clolors
 
-
-vim.opt.hidden = true -- aollow buffer swap without saving
+vim.opt.hidden = true -- allow buffer swap without saving
 vim.opt.number = true -- enable number line
 
 vim.opt.tabstop     = 4
@@ -16,7 +15,9 @@ vim.opt.backup   = false
 vim.opt.undodir  = os.getenv("HOME") .. "/.local/nvim/undodir"
 vim.opt.undofile = true
 
-vim.opt.hlsearch = false
-vim.opt.incsearch = true
+vim.opt.hlsearch  = false -- highlight search matches
+vim.opt.incsearch = true  -- 
 
-vim.opt.colorcolumn = "80"
+vim.opt.cursorline  = true -- hightlight current line
+vim.opt.colorcolumn = "80" -- highlight column at given char length
+
