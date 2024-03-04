@@ -15,7 +15,8 @@ return {
                 "vim",
                 "vimdoc",
             },
-            sync_install = false,
+            auto_install = true, -- auto install parsers
+            sync_install = true, -- parallel installs
             -- enable syntax hightlighting
             highlight = { enable = true },
             -- enable indentation
@@ -23,3 +24,4 @@ return {
         })
     end
 }
+

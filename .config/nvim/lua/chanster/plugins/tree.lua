@@ -6,7 +6,8 @@ return {
 
         tree.setup({
             view = ({
-                relativenumber = true,
+                width = 50,
+                relativenumber = false,
             }),
             renderer = {
                 indent_markers = {
