@@ -10,5 +10,6 @@ python = "latest"
 shellcheck = "latest"
 lazygit = "latest"
 node = "lts"
+lazydocker = "latest"
 
 [env]
