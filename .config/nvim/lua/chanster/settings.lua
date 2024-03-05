@@ -3,6 +3,8 @@ vim.opt.termguicolors = true -- enable clolors
 vim.opt.hidden = true -- allow buffer swap without saving
 vim.opt.number = true -- enable number line
 
+vim.opt.pastetoggle = "<F2>"
+
 vim.opt.tabstop     = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth  = 4
@@ -20,4 +22,3 @@ vim.opt.incsearch = true  --
 
 vim.opt.cursorline  = true -- hightlight current line
 vim.opt.colorcolumn = "80" -- highlight column at given char length
-
