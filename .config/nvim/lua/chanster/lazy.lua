@@ -1,7 +1,7 @@
 require("lazy").setup(
     {
         { import = "chanster.plugins" },
-        -- { import = "chanster.plugins.lsp" }
+        { import = "chanster.plugins.lsp" }
     },
     {
         checker = {
@@ -9,7 +9,7 @@ require("lazy").setup(
             notify = true
         },
         change_detection = {
-            notify = false
+            notify = true
         }
     }
 )
