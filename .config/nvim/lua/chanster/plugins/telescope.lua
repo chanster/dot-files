@@ -3,13 +3,14 @@ return {
     tag = "0.1.5",
     dependencies = {
         -- windowing
-        "nvim-lua/plenary.nvim" 
+        "nvim-lua/plenary.nvim",
+        "nvim-tree/nvim-web-devicons",
     },
     config = function()
         local telescope = require("telescope")
         local actions = require("telescope.actions")
         local builtin = require("telescope.builtin")
-        local ms = vim.keymap.set
+        local map = vim.keymap.set
 
         telescope.setup({
             defaults = {
@@ -17,9 +18,10 @@ return {
             }
         })
 
-        ms('n', '<Leader>ff', builtin.find_files, {})
-        ms('n', '<Leader>fg', builtin.live_grep, {})
-        ms('n', '<Leader>fb', builtin.buffers, {})
-        ms('n', '<Leader>fh', builtin.help_tags, {})
+        map("n", "<Leader>ff", builtin.find_files, {})
+        map("n", "<Leader>fr", builtin.oldfiles, {})
+        map("n", "<Leader>fg", builtin.live_grep, {})
+        map("n", "<Leader>fb", builtin.buffers, {})
+        map("n", "<Leader>fh", builtin.help_tags, {})
     end
 }
