@@ -2,14 +2,14 @@ return {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.5",
     dependencies = {
-        -- windowing
-        "nvim-lua/plenary.nvim",
+        "nvim-lua/plenary.nvim", -- window modal
         "nvim-tree/nvim-web-devicons",
     },
     config = function()
         local telescope = require("telescope")
-        local actions = require("telescope.actions")
+        -- local actions = require("telescope.actions")
         local builtin = require("telescope.builtin")
+        local opts = { noremap = true, silent = true }
         local map = vim.keymap.set
 
         telescope.setup({
@@ -18,10 +18,16 @@ return {
             }
         })
 
-        map("n", "<Leader>ff", builtin.find_files, {})
-        map("n", "<Leader>fr", builtin.oldfiles, {})
-        map("n", "<Leader>fg", builtin.live_grep, {})
-        map("n", "<Leader>fb", builtin.buffers, {})
-        map("n", "<Leader>fh", builtin.help_tags, {})
+        opts.desc = "Find File"
+        map("n", "<leader>ff", builtin.find_files, opts)
+        opts.desc = "Open Recent File"
+        map("n", "<leader>fr", builtin.oldfiles, opts)
+        opts.desc = "Live Grep"
+        map("n", "<leader>fg", builtin.live_grep, opts)
+        opts.desc = "Find in Buffer"
+        map("n", "<leader>fb", builtin.buffers, opts)
+        opts.desc = "Help Tags"
+        map("n", "<leader>ft", builtin.help_tags, opts)
     end
 }
+
