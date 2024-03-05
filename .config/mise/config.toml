@@ -8,3 +8,7 @@ task = "latest"
 k9s = "latest"
 python = "latest"
 shellcheck = "latest"
+lazygit = "latest"
+node = "lts"
+
+[env]
