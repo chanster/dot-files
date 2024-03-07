@@ -24,7 +24,7 @@ if [[ -f "${ZDOTDIR:-${HOME}}/.zimrc" ]]; then
     zstyle ':zim:zmodule' use 'degit' # don't use git to install modules
     
     # set zim paths
-    ZIM_HOME="${HOME}/.config/zsh/zimfw"
+    export ZIM_HOME="${HOME}/.config/zsh/zimfw"
     
     # create .zimrc file if it doesn't exist
     if [[ ! -f "${ZDOTDIR:-${HOME}}/.zimrc" ]]; then
@@ -52,8 +52,6 @@ fi
 
 # asdf tool manager
 if [[ -f "${HOME}/.asdf/asdf.sh" ]]; then
-    # initialise completions with ZSH's compinit
-    autoload -Uz compinit && compinit
     # load plugins helpers
     if [[ -d "${HOME}/.asdf/plugins" ]]; then
         for helper in $(find "${HOME}/.asdf/plugins" -maxdepth 2 -name "*.zsh"); do
