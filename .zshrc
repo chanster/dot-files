@@ -13,15 +13,6 @@ if [[ -f "${HOME}/.config/aliases.local" ]]; then
     source "${HOME}/.config/aliases.local"
 fi
 
-# history
-HISTFILE="${HOME}/.local/zsh_history"
-HISTSIZE=10000
-SAVEHIST=10000
-setopt HIST_IGNORE_SPACE    # don't save command prefixed with a space
-setopt APPEND_HISTORY       # append to history
-setopt SHARE_HISTORY        # allow multiple terminal sessions to use history
-setopt HIST_IGNORE_ALL_DUPS # remove older duplicate commands
-
 # diable less history files
 if [[ $(command -v less) ]]; then
     export LESSHISTFILE
@@ -29,17 +20,15 @@ if [[ $(command -v less) ]]; then
 fi
 
 # zim:fw zsh framework
-if [[ -d "${HOME}/.config/zsh/zimfw" ]]; then
-    # don't use git
-    zstyle ':zim:zmodule' use 'degit'
+if [[ -f "${ZDOTDIR:-${HOME}}/.zimrc" ]]; then
+    zstyle ':zim:zmodule' use 'degit' # don't use git to install modules
     
     # set zim paths
     ZIM_HOME="${HOME}/.config/zsh/zimfw"
-    ZDOTDIR="${HOME}/.config/zsh"
     
     # create .zimrc file if it doesn't exist
-    if [[ ! -f "${ZDOTDIR}/.zimrc" ]]; then
-        touch ${ZDOTDIR}/.zimrc
+    if [[ ! -f "${ZDOTDIR:-${HOME}}/.zimrc" ]]; then
+        touch ${ZDOTDIR:-${HOME}}/.zimrc
     fi
     # download zim framework if it doesn't exist
     if [[ ! -e "${ZIM_HOME}/zimfw.zsh" ]]; then
@@ -48,39 +37,39 @@ if [[ -d "${HOME}/.config/zsh/zimfw" ]]; then
     fi
 
     # initialize zim
-    if [[ ! "${ZIM_HOME}/init.zsh" -nt "${ZDOTDIR}/.zimrc" ]]; then
+    if [[ ! "${ZIM_HOME}/init.zsh" -nt "${ZDOTDIR:-${HOME}}/.zimrc" ]]; then
         source "${ZIM_HOME}/zimfw.zsh" init -q
     elif [[ -f "${ZIM_HOME}/init.zsh" ]]; then
-	source "${ZIM_HOME}/init.zsh"
+	    source "${ZIM_HOME}/init.zsh"
     fi
 fi
 
+# mise-en-place tool manager
 if [[ $(command -v "mise") ]]; then
     # shellcheck disable=SC2086
     eval "$(mise completion ${SHELL##*/})"
 fi
 
-# asdf version manager
-if [[ -d "${HOME}/.asdf" ]]; then
-    if [[ -n "${BASH_VERSION}" ]]; then
-        source "${ASDF_DIR}/completions/asdf.bash"
-        # load plugins helpers
-        if [[ -d "${HOME}/.asdf/plugins" ]]; then
-            for helper in $(find "${HOME}/.asdf/plugins" -maxdepth 2 -name "*.bash"); do
-                source "${helper}"
-            done
-        fi
-    elif [[ -n "${ZSH_VERSION}" ]]; then
-        # initialise completions with ZSH's compinit
-        autoload -Uz compinit && compinit
-        # load plugins helpers
-        if [[ -d "${HOME}/.asdf/plugins" ]]; then
-            for helper in $(find "${HOME}/.asdf/plugins" -maxdepth 2 -name "*.zsh"); do
-                source "${helper}"
-            done
-        fi
+# asdf tool manager
+if [[ -f "${HOME}/.asdf/asdf.sh" ]]; then
+    # initialise completions with ZSH's compinit
+    autoload -Uz compinit && compinit
+    # load plugins helpers
+    if [[ -d "${HOME}/.asdf/plugins" ]]; then
+        for helper in $(find "${HOME}/.asdf/plugins" -maxdepth 2 -name "*.zsh"); do
+            source "${helper}"
+        done
     fi
 fi
+
+# history
+HISTFILE="${HOME}/.local/zsh_history"
+HISTSIZE=10000
+SAVEHIST=10000
+setopt HIST_IGNORE_SPACE    # don't save command prefixed with a space
+setopt APPEND_HISTORY       # append to history
+setopt SHARE_HISTORY        # allow multiple terminal sessions to use history
+setopt HIST_IGNORE_ALL_DUPS # remove older duplicate commands
 
 # Bind up and down keys
 bindkey '^[[A' history-substring-search-up
