@@ -11,5 +11,6 @@ shellcheck = "latest"
 lazygit = "latest"
 node = "lts"
 lazydocker = "latest"
+neovim = "latest"
 
 [env]
