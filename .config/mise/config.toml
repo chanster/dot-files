@@ -12,5 +12,6 @@ lazygit = "latest"
 node = "lts"
 lazydocker = "latest"
 neovim = "latest"
+fzf = "latest"
 
 [env]

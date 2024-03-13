@@ -22,5 +22,7 @@ _darcs
 ^/LICENSE.*
 ^/COPYING
 
+.config/tmux/plugins
+
 .mise.toml
 taskfile.yaml
