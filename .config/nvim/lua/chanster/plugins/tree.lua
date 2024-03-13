@@ -10,20 +10,11 @@ return {
                 relativenumber = false,
             }),
             renderer = {
-                icons = {
-                    folder = {
-                        enable = true,
-                    },
-                },
                 indent_markers = {
                     enable = true
                 },
-                highlight_git = {
-                    enable = "icon"
-                },
-                hightlight_opened_files = {
-                    enable = true
-                },
+                highlight_git = "icon",
+                highlight_opened_files = "all",
                 special_files = {
                     ".gitignore",
                     "Cargo.toml",
