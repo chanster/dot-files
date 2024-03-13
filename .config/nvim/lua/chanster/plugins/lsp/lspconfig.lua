@@ -72,14 +72,20 @@ return {
 
         mason_lspconfig.setup({ automatic_installation = true })
 
+        -- bash
+        lspconfig["bashls"].setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+        })
+
         -- python
-        lspconfig["pyright"].setup({
+        lspconfig["ruff_lsp"].setup({
             capabilities = capabilities,
             on_attach = on_attach,
         })
 
         -- terraform
-        lspconfig["tflint"].setup({
+        lspconfig["terraformls"].setup({
             capabilities = capabilities,
             on_attach = on_attach,
         })
