@@ -1,7 +1,7 @@
 require("lazy").setup(
     {
-        { import = "chanster.plugins" },
-        { import = "chanster.plugins.lsp" }
+        { import = "custom.plugins" },
+        { import = "custom.plugins.lsp" }
     },
     {
         checker = {

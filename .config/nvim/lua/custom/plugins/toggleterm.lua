@@ -10,7 +10,7 @@ return {
             direction = "float",
             display = "LazyGit"
         })
-        function lazygit_toggle()
+        function Toggle_lazygit()
             lazygit:toggle()
         end
         -- lazydocker
@@ -21,7 +21,7 @@ return {
             direction = "float",
             display = "LazyDocker"
         })
-        function lazydocker_toggle()
+        function Toggle_lazydocker()
             lazydocker:toggle()
         end
         -- k9s
@@ -32,16 +32,16 @@ return {
             direction = "float",
             display = "k9s"
         })
-        function k9s_toggle()
+        function Toggle_k9s()
             k9s:toggle()
         end
 
 
         toggleterm.setup()
 
-        vim.keymap.set("n", "<leader>tt", "<cmd>ToggleTerm direction=horizontal<CR>", { desc = "Open Terminal" })
-        vim.keymap.set("n", "<leader>gg", "<cmd>lua lazygit_toggle()<CR>", { desc = "Open LazyGit"})
-        vim.keymap.set("n", "<leader>ld", "<cmd>lua lazydocker_toggle()<CR>", { desc = "Open LazyDocker"})
-        vim.keymap.set("n", "<leader>k9", "<cmd>lua k9s_toggle()<CR>", { desc = "Open K9s"})
+        vim.keymap.set("n", "<leader>tt", "<cmd>ToggleTerm direction=float<CR>", { desc = "Open Terminal" })
+        vim.keymap.set("n", "<leader>tg", "<cmd>lua Toggle_lazygit()<CR>", { desc = "Open LazyGit"})
+        vim.keymap.set("n", "<leader>td", "<cmd>lua Toggle_lazydocker()<CR>", { desc = "Open LazyDocker"})
+        vim.keymap.set("n", "<leader>tk", "<cmd>lua Toggle_k9s()<CR>", { desc = "Open K9s"})
     end
 }

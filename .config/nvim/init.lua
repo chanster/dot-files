@@ -1,2 +1,3 @@
-require("chanster")
+require("core")
+require("custom")
 
