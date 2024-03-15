@@ -1,6 +1,6 @@
 return {
     "nvim-telescope/telescope.nvim",
-    tag = "0.1.5",
+    tag = "0.1.6",
     dependencies = {
         "nvim-lua/plenary.nvim", -- window modal
         "nvim-tree/nvim-web-devicons",
@@ -14,7 +14,7 @@ return {
 
         telescope.setup({
             defaults = {
-                path_display = { "tuncate" },
+                path_display = { "truncate" },
             }
         })
 
@@ -30,4 +30,3 @@ return {
         map("n", "<leader>ft", builtin.help_tags, opts)
     end
 }
-
