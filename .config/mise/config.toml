@@ -1,4 +1,6 @@
 [tools]
+awscli = "2"
+azure-cli = "2"
 terraform = "latest"
 packer = "latest"
 jq = "latest"
