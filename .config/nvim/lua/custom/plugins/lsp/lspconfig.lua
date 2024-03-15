@@ -2,6 +2,7 @@ return {
     "neovim/nvim-lspconfig",
     dependencies = {
         "hrsh7th/cmp-nvim-lsp",
+        "nvim-telescope/telescope.nvim",
         "williamboman/mason-lspconfig",
         { "antosha417/nvim-lsp-file-operations", config = true },  -- update file references on rename
     },
@@ -11,6 +12,7 @@ return {
     },
     config = function()
         local lspconfig = require("lspconfig")
+        local telescope = require("telescope.builtin")
         local cmp_nvim_lsp = require("cmp_nvim_lsp")
         local mason_lspconfig = require("mason-lspconfig")
         local capabilities = cmp_nvim_lsp.default_capabilities() -- enable autocompletion for language servers
@@ -24,19 +26,19 @@ return {
 
             -- set keybinds
             opts.desc = "Show LSP references"
-            map("n", "gR", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
+            map("n", "gR", telescope.lsp_references, opts) -- show definition, references
 
             opts.desc = "Go to declaration"
             map("n", "gD", vim.lsp.buf.declaration, opts) -- go to declaration
 
             opts.desc = "Show LSP definitions"
-            map("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts) -- show lsp definitions
+            map("n", "gd", telescope.lsp_definitions, opts) -- show lsp definitions
 
             opts.desc = "Show LSP implementations"
-            map("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts) -- show lsp implementations
+            map("n", "gi", telescope.lsp_implementations, opts) -- show lsp implementations
 
             opts.desc = "Show LSP type definitions"
-            map("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", opts) -- show lsp type definitions
+            map("n", "gt", telescope.lsp_type_definitions, opts) -- show lsp type definitions
 
             opts.desc = "See available code actions"
             map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
@@ -82,10 +84,27 @@ return {
         lspconfig["ruff_lsp"].setup({
             capabilities = capabilities,
             on_attach = on_attach,
+            init_options = {
+                settings = {
+                    args = {},
+                },
+            },
+        })
+        lspconfig["pylsp"].setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+        })
+        lspconfig["pyright"].setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
         })
 
         -- terraform
         lspconfig["terraformls"].setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+        })
+        lspconfig["tflint"].setup({
             capabilities = capabilities,
             on_attach = on_attach,
         })
