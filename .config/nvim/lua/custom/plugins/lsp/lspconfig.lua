@@ -80,6 +80,18 @@ return {
             on_attach = on_attach,
         })
 
+        -- yaml
+        lspconfig["yamlls"].setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+        })
+
+        -- json
+        lspconfig["jsonls"].setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+        })
+
         -- python
         lspconfig["ruff_lsp"].setup({
             capabilities = capabilities,
