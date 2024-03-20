@@ -19,12 +19,7 @@ return {
         })
 
         mason_lspconfig.setup({
-            ensure_installed = {
-                "pyright", -- python
-                "gopls", -- golang
-                "tflint", -- terraform
-            },
+            ensure_installed = {},
         })
     end
 }
-
