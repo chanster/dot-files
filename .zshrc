@@ -3,6 +3,9 @@ if ! [[ -o interactive ]]; then
     return
 fi
 
+# enable bash stuff
+autoload bashcompinit && bashcompinit
+
 # set aliases
 if [[ -f "${HOME}/.config/aliases" ]]; then
     source "${HOME}/.config/aliases"
@@ -48,6 +51,10 @@ fi
 if [[ $(command -v "mise") ]]; then
     # shellcheck disable=SC2086
     eval "$(mise completion ${SHELL##*/})"
+    # enable shims
+    if [[ -d "${HOME}/.local/share/mise/shims" ]]; then
+	export PATH="${HOME}/.local/share/mise/shims:${PATH}"
+    fi
 fi
 
 # asdf tool manager
@@ -58,6 +65,11 @@ if [[ -f "${HOME}/.asdf/asdf.sh" ]]; then
             source "${helper}"
         done
     fi
+fi
+
+# aws completion
+if [[ $(command -v "aws_completer") ]]; then
+    complete -C "aws_completer" aws
 fi
 
 # history
