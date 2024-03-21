@@ -59,7 +59,6 @@ return {
             vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
         end
 
-
         -- bash
         lspconfig["bashls"].setup({
             capabilities = capabilities,
@@ -74,6 +73,12 @@ return {
 
         -- json
         lspconfig["jsonls"].setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+        })
+
+        -- markdown
+        lspconfig["vale_ls"].setup({
             capabilities = capabilities,
             on_attach = on_attach,
         })
