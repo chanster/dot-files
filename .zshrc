@@ -3,7 +3,7 @@ if ! [[ -o interactive ]]; then
     return
 fi
 
-# enable bash stuff
+# enable bash completion commands
 autoload bashcompinit && bashcompinit
 
 # set aliases
@@ -87,6 +87,7 @@ bindkey '^[[B' history-substring-search-down
 
 zmodload -F zsh/terminfo +p:terminfo
 if [[ -n ${terminfo[kcuu1]} && -n ${terminfo[kcud1]} ]]; then
-  bindkey ${terminfo[kcuu1]} history-substring-search-up
-  bindkey ${terminfo[kcud1]} history-substring-search-down
+    bindkey ${terminfo[kcuu1]} history-substring-search-up
+    bindkey ${terminfo[kcud1]} history-substring-search-down
 fi
+
