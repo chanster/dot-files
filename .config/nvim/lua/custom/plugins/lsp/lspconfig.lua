@@ -14,7 +14,6 @@ return {
         local lspconfig = require("lspconfig")
         local telescope = require("telescope.builtin")
         local cmp_nvim_lsp = require("cmp_nvim_lsp")
-        local mason_lspconfig = require("mason-lspconfig")
         local capabilities = cmp_nvim_lsp.default_capabilities() -- enable autocompletion for language servers
 
         -- load keybindings on lsp buffer
@@ -60,7 +59,6 @@ return {
             vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
         end
 
-        mason_lspconfig.setup({ automatic_installation = true })
 
         -- bash
         lspconfig["bashls"].setup({
