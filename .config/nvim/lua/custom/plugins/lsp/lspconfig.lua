@@ -26,31 +26,31 @@ return {
 
             -- set keybinds
             opts.desc = "Show LSP references"
-            map("n", "gR", telescope.lsp_references, opts)                        -- show definition, references
+            map("n", "gR", telescope.lsp_references, opts)               -- show definition, references
             opts.desc = "Go to declaration"
-            map("n", "gD", vim.lsp.buf.declaration, opts)                         -- go to declaration
+            map("n", "gD", vim.lsp.buf.declaration, opts)                -- go to declaration
             opts.desc = "Show LSP definitions"
-            map("n", "gd", telescope.lsp_definitions, opts)                       -- show lsp definitions
+            map("n", "gd", telescope.lsp_definitions, opts)              -- show lsp definitions
             opts.desc = "Show LSP implementations"
-            map("n", "gi", telescope.lsp_implementations, opts)                   -- show lsp implementations
+            map("n", "gi", telescope.lsp_implementations, opts)          -- show lsp implementations
             opts.desc = "Show LSP type definitions"
-            map("n", "gt", telescope.lsp_type_definitions, opts)                  -- show lsp type definitions
+            map("n", "gt", telescope.lsp_type_definitions, opts)         -- show lsp type definitions
             opts.desc = "See available code actions"
-            map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)        -- see available code actions, in visual mode will apply to selection
+            map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
             opts.desc = "Smart rename"
-            map("n", "<leader>rn", vim.lsp.buf.rename, opts)                      -- smart rename
+            map("n", "<leader>rn", vim.lsp.buf.rename, opts)             -- smart rename
             opts.desc = "Show buffer diagnostics"
             map("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts) -- show  diagnostics for file
             opts.desc = "Show line diagnostics"
-            map("n", "<leader>d", vim.diagnostic.open_float, opts)                -- show diagnostics for line
+            map("n", "<leader>d", vim.diagnostic.open_float, opts)       -- show diagnostics for line
             opts.desc = "Go to previous diagnostic"
-            map("n", "[d", vim.diagnostic.goto_prev, opts)                        -- jump to previous diagnostic in buffer
+            map("n", "[d", vim.diagnostic.goto_prev, opts)               -- jump to previous diagnostic in buffer
             opts.desc = "Go to next diagnostic"
-            map("n", "]d", vim.diagnostic.goto_next, opts)                        -- jump to next diagnostic in buffer
+            map("n", "]d", vim.diagnostic.goto_next, opts)               -- jump to next diagnostic in buffer
             opts.desc = "Show documentation for what is under cursor"
-            map("n", "K", vim.lsp.buf.hover, opts)                                -- show documentation for what is under cursor
+            map("n", "K", vim.lsp.buf.hover, opts)                       -- show documentation for what is under cursor
             opts.desc = "Restart LSP"
-            map("n", "<leader>rs", "<cmd>LspRestart<CR>", opts)                   -- mapping to restart lsp if necessary
+            map("n", "<leader>rs", "<cmd>LspRestart<CR>", opts)          -- mapping to restart lsp if necessary
         end
 
         -- Change the Diagnostic symbols
