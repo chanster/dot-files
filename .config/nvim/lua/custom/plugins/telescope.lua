@@ -17,13 +17,6 @@ return {
             defaults = {
                 path_display = { "truncate" },
             },
-            pickers = {
-                live_grep = {
-                    additional_args = function()
-                        return { "--hidden" }
-                    end
-                },
-            },
         })
 
         wk.register({
@@ -34,10 +27,17 @@ return {
 
         opts.desc = "Find File"
         map("n", "<leader>ff", builtin.find_files, opts)
+        opts.desc = "Find File (include hidden)"
+        map("n", "<leader>fF", function() builtin.find_files({ hidden = true, file_ignore_patterns = { ".git/" } }) end,
+            opts)
         opts.desc = "Open Recent File"
         map("n", "<leader>fr", builtin.oldfiles, opts)
         opts.desc = "Live Grep"
         map("n", "<leader>fg", builtin.live_grep, opts)
+        opts.desc = "Live Grep (include hidden)"
+        map("n", "<leader>fG",
+            function() builtin.live_grep({ additional_args = { "--hidden", "--glob=!**/.git/*" } }) end,
+            opts)
         opts.desc = "Find in Buffer"
         map("n", "<leader>fb", builtin.buffers, opts)
         opts.desc = "Help Tags"
