@@ -1,4 +1,4 @@
--- LSP and DAP manager
+-- LSP, DAP, Formatter manager
 return {
     "williamboman/mason.nvim",
     dependencies = {
