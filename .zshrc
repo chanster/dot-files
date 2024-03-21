@@ -29,10 +29,6 @@ if [[ -f "${ZDOTDIR:-${HOME}}/.zimrc" ]]; then
     # set zim paths
     export ZIM_HOME="${HOME}/.config/zsh/zimfw"
     
-    # create .zimrc file if it doesn't exist
-    if [[ ! -f "${ZDOTDIR:-${HOME}}/.zimrc" ]]; then
-        touch ${ZDOTDIR:-${HOME}}/.zimrc
-    fi
     # download zim framework if it doesn't exist
     if [[ ! -e "${ZIM_HOME}/zimfw.zsh" ]]; then
         curl -fsSL --create-dirs -o ${ZIM_HOME}/zimfw.zsh \
