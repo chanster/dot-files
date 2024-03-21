@@ -1,5 +1,9 @@
 return {
     "norcalli/nvim-colorizer.lua",
+    event = {
+        "BufNewFile",
+        "BufReadPost filettype=html,css,javascript,markdown.mdx",
+    },
     config = function()
         local colorizer = require("colorizer")
 
