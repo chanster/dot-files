@@ -1,7 +1,12 @@
 return {
     "akinsho/toggleterm.nvim",
+    dependecies = {
+        "folke/which-key.nvim",
+    },
     config = function()
         local toggleterm = require("toggleterm")
+        local wk = require("which-key")
+
         -- lazygit
         local lazygit = require("toggleterm.terminal").Terminal:new({
             cmd = "lazygit",
@@ -39,6 +44,12 @@ return {
         end
 
         toggleterm.setup()
+
+        wk.register({
+            ["<leader>t"] = {
+                name = "Toggle Term...",
+            }
+        })
 
         vim.keymap.set("n", "<leader>tt", "<cmd>ToggleTerm direction=float<CR>", { desc = "Open Terminal" })
         vim.keymap.set("n", "<leader>tg", "<cmd>lua Toggle_lazygit()<CR>", { desc = "Open LazyGit" })

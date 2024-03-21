@@ -10,6 +10,7 @@ return {
         -- local actions = require("telescope.actions")
         local builtin = require("telescope.builtin")
         local opts = { noremap = true, silent = true }
+        local wk = require("which-key")
         local map = vim.keymap.set
 
         telescope.setup({
@@ -23,6 +24,12 @@ return {
                     end
                 },
             },
+        })
+
+        wk.register({
+            ["<leader>f"] = {
+                name = "Find...",
+            }
         })
 
         opts.desc = "Find File"
