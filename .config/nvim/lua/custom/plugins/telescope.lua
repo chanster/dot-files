@@ -15,7 +15,14 @@ return {
         telescope.setup({
             defaults = {
                 path_display = { "truncate" },
-            }
+            },
+            pickers = {
+                live_grep = {
+                    additional_args = function()
+                        return { "--hidden" }
+                    end
+                },
+            },
         })
 
         opts.desc = "Find File"
