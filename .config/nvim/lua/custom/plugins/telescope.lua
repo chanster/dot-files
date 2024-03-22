@@ -4,6 +4,7 @@ return {
     dependencies = {
         "nvim-lua/plenary.nvim", -- window modal
         "nvim-tree/nvim-web-devicons",
+        "folke/which-key.nvim",
     },
     config = function()
         local telescope = require("telescope")
@@ -28,7 +29,8 @@ return {
         opts.desc = "Find File"
         map("n", "<leader>ff", builtin.find_files, opts)
         opts.desc = "Find File (include hidden)"
-        map("n", "<leader>fF", function() builtin.find_files({ hidden = true, file_ignore_patterns = { ".git/" } }) end,
+        map("n", "<leader>fF",
+            function() builtin.find_files({ hidden = true, file_ignore_patterns = { ".git/" } }) end,
             opts)
         opts.desc = "Open Recent File"
         map("n", "<leader>fr", builtin.oldfiles, opts)
