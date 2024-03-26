@@ -1,5 +1,5 @@
 import = [
-    "$HOME/.config/alacritty/themes/argonaut.toml"
+    "$HOME/.config/alacritty/themes/tokyo-night.toml"
 ]
 
 [env]
