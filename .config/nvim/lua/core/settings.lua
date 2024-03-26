@@ -4,6 +4,7 @@ vim.opt.hidden        = true -- allow buffer swap without saving
 vim.opt.number        = true -- enable number line
 
 vim.opt.pastetoggle   = "<F2>"
+vim.opt.clipboard     = "unnamed,unnamedplus"
 
 -- fallback if no .editorconfig found
 vim.opt.tabstop       = 4
