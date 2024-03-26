@@ -19,6 +19,9 @@ style = "Italic"
 x = 0
 y = 0
 
+[window]
+opacity = 0.999 # workaround for macos stutter
+
 [keyboard]
 bindings = [
   { key = "Right", mods = "Alt", chars = "\u001BF" },
