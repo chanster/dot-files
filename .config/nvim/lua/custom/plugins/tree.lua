@@ -1,3 +1,4 @@
+-- file tree
 return {
     "nvim-tree/nvim-tree.lua",
     tag = "v1",
@@ -24,6 +25,6 @@ return {
             }
         })
 
-        vim.keymap.set("n", "<C-t>", vim.cmd.NvimTreeToggle, { desc = "Nvim Tree" })
+        vim.keymap.set("n", "<C-n>", vim.cmd.NvimTreeToggle, { desc = "Nvim Tree" })
     end
 }
