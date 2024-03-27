@@ -15,5 +15,7 @@ node = "lts"
 lazydocker = "latest"
 neovim = "latest"
 fzf = "latest"
+glow = "latest"
+ripgrep = "latest"
 
 [env]
