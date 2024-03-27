@@ -12,3 +12,4 @@ zmodule completion
 zmodule zsh-users/zsh-syntax-highlighting
 zmodule zsh-users/zsh-autosuggestions
 zmodule zsh-users/zsh-history-substring-search
+zmodule joshskidmore/zsh-fzf-history-search
