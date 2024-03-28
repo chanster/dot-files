@@ -6,6 +6,10 @@ fi
 if [[ $(command -v "mise") ]]; then
     # shellcheck disable=SC2086
     eval "$(mise activate ${SHELL##*/})"
+    # enable shims
+    if [[ -d "${HOME}/.local/share/mise/shims" ]]; then
+        export PATH="${HOME}/.local/share/mise/shims:${PATH}"
+    fi
 fi
 
 # asdf tool manager
