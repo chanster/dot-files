@@ -8,18 +8,20 @@ return {
 
         treesitter.setup({
             ensure_installed = {
+                "comment",
+                "markdown_inline",
+                "regex",
                 "lua",
-                "python",
-                "go",
-                "javascript",
-                "typescript",
                 "vim",
                 "vimdoc",
             },
-            auto_install = true, -- auto install parsers
-            sync_install = true, -- parallel installs
+            auto_install = true,  -- auto install parsers
+            sync_install = false, -- parallel installs
             -- enable syntax hightlighting
-            highlight = { enable = true },
+            highlight = {
+                enable = true,
+                additional_vim_regex_highlighting = false,
+            },
             -- enable indentation
             indent = { enable = true },
         })

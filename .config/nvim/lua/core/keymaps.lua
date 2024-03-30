@@ -11,3 +11,6 @@ map({ "n", "v" }, "<C-r>",
     end,
     { desc = "Toggle Line numbers" }
 )
+
+map("n", "<C-s>", ":w<CR>", { desc = "Save File" })
+map("i", "<C-s>", "<Esc>:w<CR>i", { desc = "Save File" })
