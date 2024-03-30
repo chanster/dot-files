@@ -97,16 +97,11 @@ return {
         lspconfig["ruff_lsp"].setup({
             capabilities = capabilities,
             on_attach = on_attach,
-            init_options = {
-                settings = {
-                    args = {},
-                },
-            },
         })
-        lspconfig["pylsp"].setup({
-            capabilities = capabilities,
-            on_attach = on_attach,
-        })
+        -- lspconfig["pylsp"].setup({
+        --     capabilities = capabilities,
+        --     on_attach = on_attach,
+        -- })
         lspconfig["pyright"].setup({
             capabilities = capabilities,
             on_attach = on_attach,
