@@ -5,7 +5,7 @@ local map = vim.keymap.set
 map("n", "<F2>", ":set invpaste paste?<CR>", { desc = "toggle indenting" })
 
 -- Toggle relative numbers
-map({ "n", "v" }, "<C-r>",
+map({ "n", "v" }, "<C-t>",
     function()
         vim.cmd("set relativenumber!")
     end,
