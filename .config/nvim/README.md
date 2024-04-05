@@ -9,24 +9,32 @@ The plugins like `telescope` and `Mason` use external tools in order to function
 - `curl`
 - `python3` with `neovim` package
 - `nodejs`
-- build tools (ubuntu: `build-essential`, fedora: groupinstall "Development Tools"`, `mac: `xcode`)
+- build tools (ubuntu: `build-essential`, fedora: `groupinstall "Development Tools"`, mac: `xcode-select --install`)
 - `go`
 - `ripgrep`
-
+- `lazygit`
+- `lazydocker`
+- `k9s`
 
 ## Installing
 
-ubuntu + mise-en-place
-```
-apt install git unzip curl
+> WIP
 
-mise use --global python3 node ripgrep
-python -m pip install neovim
+### ubuntu + mise-en-place
+
+```shell
+apt update && apt install -y git unzip curl
+
+# ubuntu does not have the latest packages so we use mise
+mise use --global python3 go node ripgrep lazygit lazydocker k9s
+python -m pip install neovim # this for some LSPs
 ```
 
-brew + mise-en-place
-```
-brew install git curl unzip
+### brew
+
+```shell
+brew install python go node git curl unzip neovim ripgrep lazygit lazydocker k9s
+python -m pip install neovim # this for some LSPs
 ```
 
 If you add addtional LSPs, you may need to install additional tools to support them.
