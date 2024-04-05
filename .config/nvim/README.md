@@ -27,14 +27,14 @@ apt update && apt install -y git unzip curl
 
 # ubuntu does not have the latest packages so we use mise
 mise use --global python3 go node ripgrep lazygit lazydocker k9s
-python -m pip install neovim # this for some LSPs
+python -m pip install pynvim # this for some LSPs
 ```
 
 ### brew
 
 ```shell
 brew install python go node git curl unzip neovim ripgrep lazygit lazydocker k9s
-python -m pip install neovim # this for some LSPs
+python -m pip install pynvim # this for some LSPs
 ```
 
 If you add addtional LSPs, you may need to install additional tools to support them.
