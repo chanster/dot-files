@@ -15,20 +15,7 @@ return {
             }
         })
 
-        map("n", "<F5>",
-            function()
-                if vim.fn.filereadable(".vscode/launch.json") then
-                    vscode.load_launchjs(nil, {
-                        python = { 'debugpy' }
-                    })
-                end
-                dap.continue()
-            end,
-            { desc = "Debug: Start" }
-        )
-
-
-
+        map("n", "<F5>", function() dap.continue() end, { desc = "Debug: Start" })
         map("n", "<F10>", function() dap.step_over() end, { desc = "Step over" })
         map("n", "<F11>", function() dap.step_into() end, { desc = "Step Into" })
         map("n", "<F12>", function() dap.step_out() end, { desc = "Step out" })
