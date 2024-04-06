@@ -6,5 +6,7 @@ return {
     end,
     config = function()
         require("which-key").setup()
+
+        vim.keymap.set("n", "<C-p>", ":WhichKey<CR>", { desc = "Open Which Key" })
     end
 }

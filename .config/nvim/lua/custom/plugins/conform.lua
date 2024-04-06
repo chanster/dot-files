@@ -23,7 +23,7 @@ return {
                 terraform  = { { "terraform_fmt", "hclfmt" } },
                 yaml       = { "prettier" },
                 json       = { "prettier" },
-                javascript = { { "prettierd", "prettier" } },
+                javascript = { "prettier" },
                 lua        = { "stylua" },
             }
         })

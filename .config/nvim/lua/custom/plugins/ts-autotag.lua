@@ -1,3 +1,4 @@
+-- html and js auto tags
 return {
     "windwp/nvim-ts-autotag",
     dependencies = {

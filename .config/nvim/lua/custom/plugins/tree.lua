@@ -22,7 +22,14 @@ return {
                     "Makefile", "Taskfile", "taskfile",
                     "README.md", "readme.md",
                 },
-            }
+            },
+            actions = {
+                open_file = {
+                    window_picker = {
+                        enable = false,
+                    },
+                },
+            },
         })
 
         vim.keymap.set("n", "<C-n>", vim.cmd.NvimTreeToggle, { desc = "Nvim Tree" })
