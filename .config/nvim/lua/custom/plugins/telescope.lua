@@ -44,5 +44,7 @@ return {
         map("n", "<leader>fb", builtin.buffers, opts)
         opts.desc = "Help Tags"
         map("n", "<leader>ft", builtin.help_tags, opts)
+        opts.desc = "Keymaps"
+        map("n", "<leader>fk", builtin.keymaps, opts)
     end
 }
