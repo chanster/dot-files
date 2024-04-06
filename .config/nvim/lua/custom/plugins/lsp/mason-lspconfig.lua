@@ -7,7 +7,11 @@ return {
         local mason_lspconfig = require("mason-lspconfig")
 
         mason_lspconfig.setup({
-            ensure_installed = {},
+            ensure_installed = {
+                "pyright", "ruff_lsp",
+                "bashls",
+                "terraformls", "tflint"
+            },
             automatic_installation = true,
         })
     end
