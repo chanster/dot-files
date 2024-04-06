@@ -6,6 +6,7 @@ return {
         local tree = require("nvim-tree")
 
         tree.setup({
+            sync_root_with_cwd = true,
             view = ({
                 width = 50,
                 relativenumber = false,
