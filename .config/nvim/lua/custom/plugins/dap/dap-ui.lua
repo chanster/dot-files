@@ -7,6 +7,7 @@ return {
     config = function()
         local dap = require("dap")
         local dapui = require("dapui")
+        local map = vim.keymap.set
 
         dapui.setup()
 
@@ -22,5 +23,9 @@ return {
         dap.listeners.before.event_exited.dapui_config = function()
             dapui.close()
         end
+
+        map({ "n" }, "<leader>du", function() require("dapui").toggle({}) end, { desc = "[D]AP [U]I toggle" })
+        map({ "n", "v" }, "<leader>de", function() require("dapui").eval() end,
+            { desc = "[D]AP UI [E]valuate expression" })
     end
 }
