@@ -60,15 +60,15 @@ M.config = function()
 
     wk.register({
         ["<leader>t"] = {
-            name = "Toggle Term...",
+            name = "Toggle [T]erm...",
         }
     })
 
-    vim.keymap.set("n", "<leader>tt", "<cmd>ToggleTerm direction=float<CR>", { desc = "Open Terminal (float)" })
-    vim.keymap.set("n", "<leader>tT", "<cmd>ToggleTerm direction=horizontal<CR>", { desc = "Open Terminal" })
-    vim.keymap.set("n", "<leader>tg", "<cmd>lua Toggle_lazygit()<CR>", { desc = "Open LazyGit" })
-    vim.keymap.set("n", "<leader>td", "<cmd>lua Toggle_lazydocker()<CR>", { desc = "Open LazyDocker" })
-    vim.keymap.set("n", "<leader>tk", "<cmd>lua Toggle_k9s()<CR>", { desc = "Open K9s" })
+    vim.keymap.set("n", "<leader>tt", "<cmd>ToggleTerm direction=float<CR>", { desc = "Open [T]erminal (float)" })
+    vim.keymap.set("n", "<leader>tT", "<cmd>ToggleTerm direction=horizontal<CR>", { desc = "Open [T]erminal" })
+    vim.keymap.set("n", "<leader>tg", "<cmd>lua Toggle_lazygit()<CR>", { desc = "Open Lazy[G]it" })
+    vim.keymap.set("n", "<leader>td", "<cmd>lua Toggle_lazydocker()<CR>", { desc = "Open Lazy[D]ocker" })
+    vim.keymap.set("n", "<leader>tk", "<cmd>lua Toggle_k9s()<CR>", { desc = "Open [K]9s" })
 end
 
 return M
