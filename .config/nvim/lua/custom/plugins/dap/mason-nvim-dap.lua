@@ -6,7 +6,7 @@ return {
     },
     config = function()
         local masondap = require("mason-nvim-dap")
-
+        --
         masondap.setup({
             ensure_installed = {},
             automatic_installation = true,
@@ -18,4 +18,3 @@ return {
         })
     end
 }
-
