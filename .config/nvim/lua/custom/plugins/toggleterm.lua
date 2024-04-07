@@ -17,7 +17,11 @@ M.config = function()
         display = "LazyGit",
     })
     function Toggle_lazygit()
-        lazygit:toggle()
+        if vim.fn.executable("lazygit") == 1 then
+            lazygit:toggle()
+        else
+            print("unable to find laygit...is it installed?")
+        end
     end
 
     -- lazydocker
@@ -29,7 +33,11 @@ M.config = function()
         display = "LazyDocker",
     })
     function Toggle_lazydocker()
-        lazydocker:toggle()
+        if vim.fn.executable("lazydocker") == 1 then
+            lazydocker:toggle()
+        else
+            print("unable to find laydocker...is it installed?")
+        end
     end
 
     -- k9s
@@ -41,7 +49,11 @@ M.config = function()
         display = "k9s",
     })
     function Toggle_k9s()
-        k9s:toggle()
+        if vim.fn.executable("k9s") == 1 then
+            k9s:toggle()
+        else
+            print("unable to find k9s...is it installed?")
+        end
     end
 
     toggleterm.setup()
