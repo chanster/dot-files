@@ -20,7 +20,7 @@ M.config = function()
         if vim.fn.executable("lazygit") == 1 then
             lazygit:toggle()
         else
-            print("unable to find laygit...is it installed?")
+            vim.notify("unable to find laygit...is it installed?", vim.log.levels.ERROR, { title = "ToggleTerm" })
         end
     end
 
@@ -36,7 +36,7 @@ M.config = function()
         if vim.fn.executable("lazydocker") == 1 then
             lazydocker:toggle()
         else
-            print("unable to find laydocker...is it installed?")
+            vim.notify("unable to find laydocker...is it installed?", vim.log.levels.ERROR, { title = "ToggleTerm" })
         end
     end
 
@@ -52,7 +52,7 @@ M.config = function()
         if vim.fn.executable("k9s") == 1 then
             k9s:toggle()
         else
-            print("unable to find k9s...is it installed?")
+            vim.notify("unable to find k9s...is it installed?", vim.log.levels.ERROR, { title = "ToggleTerm" })
         end
     end
 
