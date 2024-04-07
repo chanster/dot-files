@@ -1,12 +1,14 @@
 -- html and js auto tags
-return {
-    "windwp/nvim-ts-autotag",
-    dependencies = {
-        "nvim-treesitter/nvim-treesitter",
-    },
-    config = function()
-        require('nvim-ts-autotag').setup({
-            filetypes = { "html", "xml" },
-        })
-    end
+local M = { "windwp/nvim-ts-autotag" }
+
+M.dependencies = {
+    "nvim-treesitter/nvim-treesitter",
 }
+
+M.config = function()
+    require('nvim-ts-autotag').setup({
+        filetypes = { "html", "xml" },
+    })
+end
+
+return M

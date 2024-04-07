@@ -1,9 +1,10 @@
 -- adds indentation guides
-return {
-    "lukas-reineke/indent-blankline.nvim",
-    main = "ibl",
-    opts = {},
-    config = function()
-        require("ibl").setup()
-    end
-}
+local M = { "lukas-reineke/indent-blankline.nvim", main = "ibl" }
+
+M.opts = {}
+
+M.config = function()
+    require("ibl").setup()
+end
+
+return M

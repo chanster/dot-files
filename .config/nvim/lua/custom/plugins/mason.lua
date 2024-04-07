@@ -1,25 +1,18 @@
 -- LSP, DAP, Formatter manager
-return {
-    "williamboman/mason.nvim",
-    dependencies = {
-        "williamboman/mason-lspconfig.nvim", -- lsp manager
-    },
-    config = function()
-        local mason = require("mason")
-        local mason_lspconfig = require("mason-lspconfig")
+local M = { "williamboman/mason.nvim" }
 
-        mason.setup({
-            ui = {
-                icons = {
-                    package_installed   = "✓",
-                    package_pending     = "→",
-                    package_uninstalled = "✗",
-                }
+M.config = function()
+    local mason = require("mason")
+
+    mason.setup({
+        ui = {
+            icons = {
+                package_installed   = "✓",
+                package_pending     = "→",
+                package_uninstalled = "✗",
             }
-        })
+        }
+    })
+end
 
-        mason_lspconfig.setup({
-            ensure_installed = {},
-        })
-    end
-}
+return M

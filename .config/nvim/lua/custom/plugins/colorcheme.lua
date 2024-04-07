@@ -1,8 +1,11 @@
-return {
-    "folke/tokyonight.nvim",
-    lazy = false,
-    priorty = 100,
-    config = function()
-        vim.cmd('colorscheme tokyonight-night')
-    end
-}
+-- theme
+local M = { "folke/tokyonight.nvim" }
+
+M.lazy = false
+M.priorty = 100
+
+M.config = function()
+    vim.cmd('colorscheme tokyonight-night')
+end
+
+return M
