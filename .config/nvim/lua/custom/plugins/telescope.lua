@@ -17,6 +17,11 @@ return {
         telescope.setup({
             defaults = {
                 path_display = { "truncate" },
+                layout_strategy = "horizontal",
+                layout_config = {
+                    prompt_position = "top",
+                },
+                sorting_strategy = "ascending",
             },
         })
 
@@ -44,5 +49,7 @@ return {
         map("n", "<leader>fb", builtin.buffers, opts)
         opts.desc = "Help Tags"
         map("n", "<leader>ft", builtin.help_tags, opts)
+        opts.desc = "Keymaps"
+        map("n", "<leader>fk", builtin.keymaps, opts)
     end
 }
