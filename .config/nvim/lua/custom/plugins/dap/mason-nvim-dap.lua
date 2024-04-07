@@ -36,8 +36,10 @@ M.dependencides = {
 }
 
 M.config = function()
+    local mason = require("mason")
     local mason_dap = require("mason-nvim-dap")
-    --
+
+    mason.setup()
     mason_dap.setup({
         ensure_installed = {},
         automatic_installation = true,
