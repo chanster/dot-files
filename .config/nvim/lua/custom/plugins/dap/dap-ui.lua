@@ -13,11 +13,11 @@ M.config = function()
     dapui.setup()
 
     dap.listeners.before.attach.dapui_config = function()
-        if vim.fn.exists(":NvimTreeClose") > 0 then vim.cmd("NvimTreeClose") end
+        if vim.fn.exists(":Neotree") > 0 then vim.cmd("Neotree close") end
         dapui.open()
     end
     dap.listeners.before.launch.dapui_config = function()
-        if vim.fn.exists(":NvimTreeClose") > 0 then vim.cmd("NvimTreeClose") end
+        if vim.fn.exists(":Neotree") > 0 then vim.cmd("Neotree close") end
         dapui.open()
     end
     dap.listeners.before.event_terminated.dapui_config = function()
