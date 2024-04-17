@@ -4,6 +4,7 @@ M.dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-tree/nvim-web-devicons",
     "MunifTanjim/nui.nvim",
+    "nvim-treesitter/nvim-treesitter", -- document_symbol uses tree-sitter
 }
 
 M.config = function()
@@ -22,7 +23,7 @@ M.config = function()
             sources = { -- table
                 {
                     source = "filesystem", -- string
-                    display_name = " 󰉓  " -- string | nil
+                    display_name = " 󰙅 " -- string | nil
                 },
                 {
                     source = "buffers", -- string
@@ -30,17 +31,21 @@ M.config = function()
                 },
                 {
                     source = "document_symbols",
-                    display_name = "  "
+                    display_name = "  󰊕󰫧 "
                 },
                 {
                     source = "git_status", -- string
-                    display_name = " 󰊢 " -- string | nil
+                    display_name = " 󰊢  " -- string | nil
                 },
             },
         },
         close_if_last_window = true,
-        popup_border_style = "rounded",
+        popup_border_style = "rounded", -- "double", "none", "rounded", "shadow", "single" or "solid"
         enable_git_status = true,
+        window = {
+            position = "left",
+            width = 50,
+        },
         filesystem = {
             filtered_items = {
                 visible = false, -- when true, they will just be displayed differently than normal items
@@ -61,7 +66,6 @@ M.config = function()
         buffers = {
             follow_current_file = {
                 enabled = true,          -- This will find and focus the file in the active buffer every time
-                --              -- the current file is changed while the tree is open.
                 leave_dirs_open = false, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
             },
             group_empty_dirs = true,     -- when true, empty folders will be grouped together
