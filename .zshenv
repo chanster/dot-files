@@ -24,3 +24,16 @@ if [[ -d "${HOME}/.local/applications/Android/Sdk" ]]; then
     export PATH="${PATH}:${ANDROID_HOME}/platform-tools"
     export GRADLE_USER_HOME="${HOME}/.config/.gradle"
 fi
+
+# miniconda
+if [[ $(command -v "conda") || -d "${HOME}/.local/bin/miniconda3" || -d "${HOME}/miniconda3" ]]; then
+    # upstream
+    if [[ -f "${HOME}/.local/bin/miniconda3/etc/profile.d/conda.sh" ]]; then
+        source "${HOME}/.local/bin/miniconda3/etc/profile.d/conda.sh"
+    elif [[ -f "${HOME}/miniconda3/etc/profile.d/conda.sh" ]]; then
+        source "${HOME}/miniconda3/etc/profile.d/conda.sh"
+    # brew
+    elif [[ "/usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh" ]]; then
+        source "/usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh"
+    fi
+fi
