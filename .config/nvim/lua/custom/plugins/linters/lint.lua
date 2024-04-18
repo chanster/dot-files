@@ -5,7 +5,8 @@ return {
     "mfussenegger/nvim-lint",
     event = {
         "BufReadPre",
-        "BufNewFile"
+        "BufNewFile",
+        "InsertLeave",
     },
     config = function()
         local lint = require("lint")
@@ -13,7 +14,6 @@ return {
 
         lint.linters_by_ft = {
             -- https://github.com/mfussenegger/nvim-lint?tab=readme-ov-file#available-linters
-            markdown = { "markdownlint" }
         }
 
         local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
