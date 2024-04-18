@@ -17,8 +17,8 @@ M.config = function()
             "vim",
             "vimdoc",
         },
-        auto_install = true,      -- auto install parsers
-        sync_install = false,     -- parallel installs
+        auto_install = true,  -- auto install parsers
+        sync_install = false, -- parallel installs
         -- enable syntax hightlighting
         highlight = {
             enable = true,
