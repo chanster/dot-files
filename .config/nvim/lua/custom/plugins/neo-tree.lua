@@ -7,6 +7,21 @@ M.dependencies = {
     "nvim-treesitter/nvim-treesitter", -- document_symbol uses tree-sitter
 }
 
+M.keys = {
+    {
+        "<C-t>",
+        function()
+            require("neo-tree.command").execute({ toggle = true })
+        end,
+        desc = "Explorer NeoTree (Root Dir)",
+    },
+}
+
+M.deactivate = function()
+    vim.cmd([[Neotree close]])
+end
+
+
 M.config = function()
     local neotree = require("neo-tree")
 
@@ -23,11 +38,11 @@ M.config = function()
             sources = { -- table
                 {
                     source = "filesystem", -- string
-                    display_name = " 󰙅 " -- string | nil
+                    display_name = " 󰙅 Files" -- string | nil
                 },
                 {
                     source = "buffers", -- string
-                    display_name = " 󰈚 " -- string | nil
+                    display_name = " 󰈚 Buffers " -- string | nil
                 },
                 {
                     source = "document_symbols",
@@ -77,9 +92,6 @@ M.config = function()
             }
         }
     })
-
-    vim.keymap.set({ "n", "i" }, "<C-n>", ":Neotree toggle<CR>", { desc = "NeoTree" })
 end
-
 
 return M
