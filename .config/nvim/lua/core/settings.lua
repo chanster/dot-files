@@ -27,10 +27,10 @@ vim.opt.backup        = false
 vim.opt.undodir       = os.getenv("HOME") .. "/.local/nvim/undodir"
 vim.opt.undofile      = true
 
-vim.opt.hlsearch      = false -- highlight search matches
-vim.opt.incsearch     = true  --
+vim.opt.hlsearch      = true -- highlight search matches
+vim.opt.incsearch     = true --
 
-vim.opt.scrolloff     = 2     -- show chars above/below cursor
-vim.opt.sidescrolloff = 2     -- show chars before/after cursor
-vim.opt.cursorline    = true  -- hightlight current line
-vim.opt.colorcolumn   = "80"  -- highlight column at given char length
+vim.opt.scrolloff     = 10   -- show chars above/below cursor
+vim.opt.sidescrolloff = 10   -- show chars before/after cursor
+vim.opt.cursorline    = true -- hightlight current line
+vim.opt.colorcolumn   = "80" -- highlight column at given char length
