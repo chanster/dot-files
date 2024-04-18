@@ -46,11 +46,15 @@ M.config = function()
             end
         },
         mapping = cmp.mapping.preset.insert({
-            ["<C-u>"]     = cmp.mapping.scroll_docs(-5),
-            ["<C-d>"]     = cmp.mapping.scroll_docs(5),
+            ["<C-b>"]     = cmp.mapping.scroll_docs(-5),
+            ["<C-f>"]     = cmp.mapping.scroll_docs(5),
             ["<C-Space>"] = cmp.mapping.complete(), -- manually open cmp
             ["<C-e>"]     = cmp.mapping.abort(),    -- close cmp modal
             ["<Esc>"]     = cmp.mapping.abort(),    -- close cmp modal
+            ["<CR>"]      = cmp.mapping.confirm({   -- CR works only on explicit selection
+                behavior = cmp.ConfirmBehavior.replace,
+                select = false,
+            }),
             ["<Tab>"]     = cmp.mapping(function(fallback)
                 if cmp.visible() then
                     cmp.confirm({ select = true })
