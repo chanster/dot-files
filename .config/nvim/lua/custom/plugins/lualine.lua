@@ -8,7 +8,13 @@ M.config = function()
 
     lualine.setup({
         options = {
-            theme = "tokyonight"
+            theme = "tokyonight",
+            section_separators = " ",
+            component_separators = " ",
+            disable_filetypes = {
+                statusline = {},
+                winbar = {},
+            },
         },
         sections = {
             lualine_x = {
@@ -22,7 +28,13 @@ M.config = function()
                 { "fileformat" },
                 { "filetype" },
             },
+        },
+        extensions = {
+            "neo-tree",
+            "mason",
+            "nvim-dap-ui",
         }
+
     })
 end
 
