@@ -9,8 +9,8 @@ M.config = function()
     lualine.setup({
         options = {
             theme = "tokyonight",
-            section_separators = " ",
-            component_separators = " ",
+            section_separators = { left = '▌', right = '▐' },
+            component_separators = "|",
             disable_filetypes = {
                 statusline = {},
                 winbar = {},
