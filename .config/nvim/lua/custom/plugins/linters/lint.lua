@@ -11,7 +11,6 @@ return {
     config = function()
         local lint = require("lint")
 
-
         lint.linters_by_ft = {
             -- https://github.com/mfussenegger/nvim-lint?tab=readme-ov-file#available-linters
         }
