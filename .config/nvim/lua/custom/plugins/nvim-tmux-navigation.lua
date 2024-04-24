@@ -1,3 +1,4 @@
+-- seamless tmux window pane navigation
 local M = { "alexghergh/nvim-tmux-navigation" }
 
 M.config = function()
