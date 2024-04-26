@@ -78,6 +78,20 @@ return {
                     capabilities = capabilities,
                 })
             end,
+            ["yamlls"] = function()
+                -- yaml
+                lspconfig["yamlls"].setup({
+                    capabilities = capabilities,
+                    settings = {
+                        yaml = {
+                            schemaStore = {
+                                enable = true,
+                            },
+                            completions = true,
+                        },
+                    },
+                })
+            end,
             ["lua_ls"] = function()
                 -- lua
                 lspconfig["lua_ls"].setup({
