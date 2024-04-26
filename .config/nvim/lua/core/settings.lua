@@ -1,4 +1,5 @@
 vim.opt.termguicolors  = true -- enable clolors
+vim.opt.laststatus     = 3    -- global status line
 
 vim.opt.number         = true -- enable number line
 vim.opt.relativenumber = true
