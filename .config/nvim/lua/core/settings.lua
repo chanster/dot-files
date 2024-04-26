@@ -17,7 +17,7 @@ vim.opt.smartindent    = true -- search while typing
 vim.opt.list           = true -- display special chars below
 vim.opt.listchars:append {
     eol = "↲",
-    tab = "\\uf523  ",
+    tab = "  ",
     trail = "·",
 }
 
