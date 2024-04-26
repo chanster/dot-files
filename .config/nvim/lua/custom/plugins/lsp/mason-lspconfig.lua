@@ -10,9 +10,6 @@ return {
         mason.setup()
         mason_lspconfig.setup({
             ensure_installed = {
-                "pyright", "ruff_lsp",
-                "bashls",
-                "terraformls", "tflint"
             },
             automatic_installation = true,
         })
