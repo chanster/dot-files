@@ -5,9 +5,7 @@ vim.opt.number         = true -- enable number line
 vim.opt.relativenumber = true
 vim.opt.signcolumn     = "number"
 
-vim.opt.pastetoggle    = "<F2>"
 vim.opt.clipboard      = vim.opt.clipboard + "unnamed,unnamedplus"
-
 -- fallback if no .editorconfig found
 vim.opt.tabstop        = 4
 vim.opt.softtabstop    = 4
