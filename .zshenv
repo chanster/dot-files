@@ -25,6 +25,13 @@ if [[ -d "${HOME}/.local/applications/Android/Sdk" ]]; then
     export GRADLE_USER_HOME="${HOME}/.config/.gradle"
 fi
 
+# pyenv
+if [[ -f "${HOME}/.pyenv/bin/pyenv" ]]; then
+    export PYENV_ROOT="${HOME}/.pyenv"
+    export PATH="${PYENV_ROOT}/bin:${PATH}"
+    eval "$(pyenv init -)"
+fi
+
 # miniconda
 if [[ $(command -v "conda") || -d "${HOME}/.local/bin/miniconda3" || -d "${HOME}/miniconda3" ]]; then
     # upstream
