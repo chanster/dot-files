@@ -1,7 +1,7 @@
-# If not running interactively, don't do anything
-if ! [[ -o interactive ]]; then
-    return
-fi
+# # If not running interactively, don't do anything
+# if ! [[ -o interactive ]]; then
+#     return
+# fi
 
 # enable bash completion commands
 autoload bashcompinit && bashcompinit
