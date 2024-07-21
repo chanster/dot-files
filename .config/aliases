@@ -1,8 +1,15 @@
 # ls
-alias ls='ls -h -F --group-directories-first --color=auto --hyperlink=auto'
-alias la='ls -h -F -a --group-directories-first --color=auto --hyperlink=auto'
-alias ll='ls -l -h -F --group-directories-first --color=auto --hyperlink=auto'
-alias lla='ls -l -h -F -a --group-directories-first --color=auto --hyperlink=auto'
+if [[ "$(uname)" == "Darwin" ]]; then
+    # use coreutils from brew
+    LS_CMD="gls"
+else
+    LS_CMD="ls"
+fi
+
+alias ls='${LS_CMD} -h -F --group-directories-first --color=auto --hyperlink=auto'
+alias la='${LS_CMD} -h -F -a --group-directories-first --color=auto --hyperlink=auto'
+alias ll='${LS_CMD} -l -h -F --group-directories-first --color=auto --hyperlink=auto'
+alias lla='${LS_CMD} -l -h -F -a --group-directories-first --color=auto --hyperlink=auto'
 
 # grep
 alias grep='grep --color=auto'
