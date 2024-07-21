@@ -50,3 +50,8 @@ if [[ $(command -v "conda") || -d "${HOME}/.local/bin/miniconda3" || -d "${HOME}
         source "/usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh"
     fi
 fi
+
+# brew
+if [[ -d "/opt/homebrew" ]]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
