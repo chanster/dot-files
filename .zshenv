@@ -32,6 +32,12 @@ if [[ -f "${HOME}/.pyenv/bin/pyenv" ]]; then
     eval "$(pyenv init -)"
 fi
 
+# nvm
+if [[ -f "${HOME}/.nvm/nvm.sh" ]]; then
+    export NVM_DIR="${HOME}/.nvm"
+    [ -s "${NVM_DIR}/nvm.sh" ] && source "${NVM_DIR}/nvm.sh" # This loads nvm
+fi
+
 # miniconda
 if [[ $(command -v "conda") || -d "${HOME}/.local/bin/miniconda3" || -d "${HOME}/miniconda3" ]]; then
     # upstream
