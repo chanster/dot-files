@@ -9,10 +9,8 @@ M.config = function()
     local wk = require("which-key")
     local map = vim.keymap.set
 
-    wk.register({
-        ["<leader>d"] = {
-            name = "[D]ebug...",
-        }
+    wk.add({
+        "<leader>d", group = "[D]ebug...",
     })
 
     map("n", "<leader>ds", function() dap.continue() end, { desc = "[d]ebug: [s]tart" })

@@ -1,7 +1,7 @@
 local M = { "nvim-telescope/telescope.nvim", tag = "0.1.6" }
 
 M.dependencies = {
-    "nvim-lua/plenary.nvim",     -- window modal
+    "nvim-lua/plenary.nvim", -- window modal
     "nvim-tree/nvim-web-devicons",
     "folke/which-key.nvim",
 }
@@ -25,10 +25,8 @@ M.config = function()
         },
     })
 
-    wk.register({
-        ["<leader>f"] = {
-            name = "Find...",
-        }
+    wk.add({
+        "<leader>f", group = "Find...",
     })
 
     opts.desc = "Find File"

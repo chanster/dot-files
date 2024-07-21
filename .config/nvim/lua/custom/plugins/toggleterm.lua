@@ -58,10 +58,8 @@ M.config = function()
 
     toggleterm.setup()
 
-    wk.register({
-        ["<leader>t"] = {
-            name = "Toggle [T]erm...",
-        }
+    wk.add({
+        "<leader>t", group = "Toggle [T]erm...",
     })
 
     vim.keymap.set("n", "<leader>tt", "<cmd>ToggleTerm direction=float<CR>", { desc = "Open [T]erminal (float)" })

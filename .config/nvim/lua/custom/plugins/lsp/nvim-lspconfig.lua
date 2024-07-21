@@ -20,10 +20,8 @@ return {
         local map = vim.keymap.set
         local wk = require("which-key")
 
-        wk.register({
-            ["<leader>g"] = {
-                name = "LSP...",
-            }
+        wk.add({
+            "<leader>g", group = "LSP...",
         })
 
         -- load keybindings on lsp buffer
