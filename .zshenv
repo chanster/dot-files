@@ -31,19 +31,6 @@ if [[ -f "${HOME}/.nvm/nvm.sh" ]]; then
     [ -s "${NVM_DIR}/nvm.sh" ] && source "${NVM_DIR}/nvm.sh" # This loads nvm
 fi
 
-# miniconda
-if [[ $(command -v "conda") || -d "${HOME}/.local/bin/miniconda3" || -d "${HOME}/miniconda3" ]]; then
-    # upstream
-    if [[ -f "${HOME}/.local/bin/miniconda3/etc/profile.d/conda.sh" ]]; then
-        source "${HOME}/.local/bin/miniconda3/etc/profile.d/conda.sh"
-    elif [[ -f "${HOME}/miniconda3/etc/profile.d/conda.sh" ]]; then
-        source "${HOME}/miniconda3/etc/profile.d/conda.sh"
-    # brew
-    elif [[ "/usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh" ]]; then
-        source "/usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh"
-    fi
-fi
-
 # brew
 if [[ -d "/opt/homebrew" ]]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
