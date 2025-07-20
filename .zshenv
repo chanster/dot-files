@@ -1,3 +1,7 @@
+# https://github.com/zimfw/zimfw/wiki/Troubleshooting#completion-is-not-working
+skip_global_compinit=1
+
+# local user bin
 if [[ -d "${HOME}/.local/bin" ]]; then
     export PATH="${HOME}/.local/bin:${PATH}"
 fi
@@ -34,3 +38,4 @@ fi
 if [[ -d "/opt/homebrew" ]]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
+
