@@ -49,6 +49,11 @@ if [[ $(command -v "mise") ]]; then
     eval "$(mise completion ${SHELL##*/})"
 fi
 
+# uv
+if [[ $(command -v "uv") ]]; then
+    eval "$(uv generate-shell-completion ${SHELL##*/})"
+fi
+
 # asdf tool manager
 if [[ -f "${HOME}/.asdf/asdf.sh" ]]; then
     # load plugins helpers
