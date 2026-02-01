@@ -3,9 +3,6 @@
 #     return
 # fi
 
-# enable bash completion commands
-autoload bashcompinit && bashcompinit
-
 # set aliases
 if [[ -f "${HOME}/.config/aliases" ]]; then
     source "${HOME}/.config/aliases"
@@ -38,10 +35,14 @@ if [[ -f "${ZDOTDIR:-${HOME}}/.zimrc" ]]; then
     # initialize zim
     if [[ ! "${ZIM_HOME}/init.zsh" -nt "${ZDOTDIR:-${HOME}}/.zimrc" ]]; then
         source "${ZIM_HOME}/zimfw.zsh" init -q
-    elif [[ -f "${ZIM_HOME}/init.zsh" ]]; then
-	    source "${ZIM_HOME}/init.zsh"
+    fi
+    if [[ -f "${ZIM_HOME}/init.zsh" ]]; then
+        source "${ZIM_HOME}/init.zsh"
     fi
 fi
+
+# enable bash completion commands
+autoload bashcompinit && bashcompinit
 
 # mise-en-place tool manager
 if [[ $(command -v "mise") ]]; then
